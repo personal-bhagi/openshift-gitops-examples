@@ -3,24 +3,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: bgd
-  name: bgd
-  namespace: bgd
+    app: demo
+  name: demo
+  namespace: demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bgd
+      app: demo
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: bgd
+        app: demo
     spec:
       containers:
-      - image: quay.io/redhatworkshops/bgd:latest
-        name: bgd
+      - image: docker.io/nagisetty1998/nginx:latest
+        name: demo
         env:
         - name: COLOR
           value: "blue"
